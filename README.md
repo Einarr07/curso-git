@@ -54,3 +54,105 @@ git config --global core.autocrlf true
 ```
 git config --global core.autocrlf input
 ```
+
+### ADD y commits
+1) Para poder iniciar y trabajar dentro de un proyecto en git debemos utilizar el comando:
+```
+git init
+```
+Este comando lo que hace es crear una **carpeta oculta** donde se implementa los detalles de configuracion.
+
+2) Una vez que este inicializado nuestro proyecto ya podemos agregar archivos a nuestra area de preparación con los siguientes comandos:
+- Para subir todos los archivos
+```
+git add .
+```
+- Para subir un archivo especifico
+```
+git add nombre_del_archivo.txt
+```
+- Para subir diferentes archivos en 1 solo comando
+```
+git add archivo1.py, archivo2.java, archivo3.txt
+```
+
+3) Para verificar el estado de nuestro git utilizaremos:
+- Forma convencional
+```
+git status
+```
+- Forma simplificada
+```
+git status -s
+```
+
+
+4) Si queremos eliminar algun archivo antes de realizar un commit utilizaremos
+```
+git rm --cached nombre_del_archivo.txt
+```
+
+5) Para subir lo que tenemos agregado en nuestra área de preparación al repositorio utilizamos un commit
+- Mensaje corto
+```
+git commit -m "Comentraio"
+```
+- Mensaje largo
+```
+git commit
+```
+- Para hacer un commit directamente al repositorio y saltarnos el área de preparación:
+```
+git commit -a
+```
+
+### Git restore, checkout y más
+1) Si eliminamos un archivo y lo queremos recuperar del área de preparación utilizamos:
+```
+git restore nombre_del_archivo.txt
+```
+2) Para volver hacia la ultima vez que guardamos los cambios utilizamos:
+```
+git checkout nombre_del_archivo.txt
+```
+3) Si ya subimos nuestro archivo al área de preparación pero queremos volver a una versión anterior utilizamos **(Descarta los cambios)**:
+```
+git reset --hard
+```
+4) Cambio de nombre de un archivo
+```
+git mv nombre_del_archivo.txt nuevo_nombre.txt
+```
+
+### Git diff y historial de commits
+1) Para verificar los cambios que hicimos en comparación con los commits utilizamos:
+```
+git show nombre_del_archivo.txt
+```
+2) Comparar cambios en el área de preparación con el ultimo commit utilizamos:
+```
+git diff --staged
+```
+3) Historial de commits
+- Versión completa
+```
+git log
+```
+- Versión reducida
+```
+git log --oneline
+```
+- Los identificadores de los commits pueden llegar a repetirce si tenemos un repositorio muy grande en ese caso nosotros tenemos que configurarlo manualmente con el siguiente comando, donde el número 9 va a hacer la cantidad de valores del identificador, para repositorios pequeños con 5 o 7 esta perfecto
+```
+git config --globla core.abbrev 9
+```
+4) Comparar entre commits
+(4427b y 9ccc3 son el identificador del historial del commit con el que realizamos la comparación)
+- Cambio de nombres
+```
+git diff --name-only 4427b 9ccc3
+```
+- Cambio de lineas
+```
+git diff --word-diff 4427b 9ccc3
+```
