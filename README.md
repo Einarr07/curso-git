@@ -103,7 +103,7 @@ git commit
 ```
 - Para hacer un commit directamente al repositorio y saltarnos el área de preparación:
 ```
-git commit -a
+git commit -m "comentario" -a
 ```
 
 ### Git restore, checkout y más
