@@ -167,7 +167,7 @@ git commit --amend
 ```
 3) Para deshacer un commit debemos poner el HEAD en una versión anterior y para esto tenemos diferentes opciones.
 Nota: después de la palabra reservada (soft-mixed-hard) va el hash del commit.
-- Nº1 Esta opción nos regrese al punto que elejimos mediante el hash y todos los archivos que teniamos después de realizar ese commit se dirigen al área de preparación (staging area).
+- Nº1 Lo que nos permite esta opción es que al momento de regresar a un commit todo lo que estaba poor delante de este se envie al *staging area* o área de preparación lo cual nos permite agregar un nuevo comit para esos cambios.
 ```
 git reset --soft 45a55fc2
 ```
@@ -175,11 +175,11 @@ También se puede utilizar la notación relativa utilizando head~**numero**, el 
 ```
 git reset --soft head~1
 ```
-- Nº2 Esta nos permite mantener nuestra área de trabajo intacta. *No* envia los archivos que estaban en el commit al área de preparación.
+- Nº2 Esta segunda opción lo que nos permite es regresar a un commit y todo lo que estaba por delante de ese commit nos lo envia a nuestra *área de trabajo* para lo cual deberemos agregar de nuevo los archivos al área de preparación y realizar el commit correspondiente.
 ```
 git reset --mixed d5r8e6d
 ```
-- Nº3 Este comando sobre escribe todos los archivos y nos lo evia a nuestra área de trabajo, **si teniamos cambios los perdemos y de igual forma si teniamos archivos en el área de preparación.**
+- Nº3: Esta tercera opción nos permite regresar a un commit anterior y *se elimina* todo lo que se haya hecho después de ese commit. Es decir, todas nuestras modificaciones y los archivos creados tras ese punto *se borran*.
 ```
 git reset --hard djf23d2j
 ```
