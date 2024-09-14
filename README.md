@@ -1,8 +1,8 @@
 # Curso de git por soy dalto
 
 Git es un sistema de control de versiones donde encontraremos 3 areas de desarrollo las cuales son:
-1) El area de trabajo.
-2) El area de stashing.
+1) El área de trabajo.
+2) El área de staging area.
 3) El repositorio.
 
 ## Principiante
@@ -155,4 +155,31 @@ git diff --name-only 4427b 9ccc3
 - Cambio de lineas
 ```
 git diff --word-diff 4427b 9ccc3
+```
+
+### Modificar commits y deshacer commits
+
+1) Comando para modificar el ultimo commit
+2) Modificar y agregar un nuevo archivo.
+- Lo primero que debemos hacer es agg el archivo al area de preparación, tanto el modificado como el que deseamos agregar y utilizamos el comando: 
+```
+git commit --amend
+```
+3) Para deshacer un commit debemos poner el HEAD en una versión anterior y para esto tenemos diferentes opciones.
+Nota: después de la palabra reservada (soft-mixed-hard) va el hash del commit.
+- Nº1 Esta opción nos regrese al punto que elejimos mediante el hash y todos los archivos que teniamos después de realizar ese commit se dirigen al área de preparación (staging area).
+```
+git reset --soft 45a55fc2
+```
+También se puede utilizar la notación relativa utilizando head~**numero**, el número representa cuantos espacios se va a desplazar hacia atras dependiendo la posición del head
+```
+git reset --soft head~1
+```
+- Nº2 Esta nos permite mantener nuestra área de trabajo intacta. *No* envia los archivos que estaban en el commit al área de preparación.
+```
+git reset --mixed d5r8e6d
+```
+- Nº3 Este comando sobre escribe todos los archivos y nos lo evia a nuestra área de trabajo, **si teniamos cambios los perdemos y de igual forma si teniamos archivos en el área de preparación.**
+```
+git reset --hard djf23d2j
 ```
