@@ -183,3 +183,78 @@ git reset --mixed d5r8e6d
 ```
 git reset --hard djf23d2j
 ```
+
+### Ramas (Branches)
+Al crear una rama realizamos una copia del proyecto para trabajar desde la misma y no afectar a la rama principal.
+NOTA: La rama principal siempre suele tener el nombre de master o main.
+
+1) Este comando lo utilizamos para verificar cuantas ramas existe y en cual estamos posicionados:
+```
+git branch
+```
+
+2) Para crear una rama utilizamos el siguiente comando y el nombre de la rama debe ir en kebab-case:
+```
+git brach nombre-de-la-rama
+```
+
+3) Para pasarnos a la rama que acabamos de crear existe 2 formas:
+- Primera forma (Forma antigua):
+```
+git checkout nombre-de-la-rama
+```
+- Segunda fomra (Recomendada)
+```
+git switch nombre-de-la-rama
+```
+
+4) Para movernos instantaneamente a la rama que creamos es:
+- Primera forma:
+```
+git checkout -b rama-nueva
+```
+- Segunda forma:
+```
+git switch -c rama-nueva 
+```
+
+5) Para eliminar una rama debemos estar fuera de la rama y utilizamos este comando:
+```
+git branch -d rama-nueva
+```
+
+6) Para modificar el nombre de alguna rama estando dentro de la rama principal (o cualquier otra):
+```
+git branch -m main nombre-nuevo
+```
+pero si estamos dentro de la misma rama que queremos modificar utilizamos:
+```
+git branch -m nombre-nuevo
+```
+
+#### Fucionar ramas (merge)
+
+1) Para fucionar los cambios que realizamos en una rama con otra, debemos estar dentro de la rama a la cual queremos enviar los cambios, generalmente master o main.
+
+```
+git merge nombre-de-la-rama-donde-estan-los-cambios
+```
+
+Consejo: Si fucionamos algo que no deviamos haber fusionado (la fallamos) utilizamos el comando reset --hard como se meciona en el apartado de **Modificar commits y deshacer commits**
+
+#### Merge conflicts
+Los merge conflicts o conflictos de fusión ocurren en Git cuando dos ramas tienen cambios que no pueden fusionarse automáticamente. Esto sucede cuando dos o más personas o ramas han modificado la misma parte del mismo archivo de forma diferente, y Git no sabe cuál de las versiones conservar.
+
+
+El bloque entre <<<<<<< HEAD y ======= corresponde a los cambios en tu rama actual.
+El bloque entre ======= y >>>>>>> rama-en-conflicto corresponde a los cambios de la rama que estás fusionando.
+
+Para resolver este conflicto de fusión debemos utilizar un editor de texto y escoger el cambio que queremos conservar. En mi caso estoy utilizando VSC y tiene la opción de **Resolver en el editor de combinación**
+
+
+Para resolver estos confictos tendremos 3 opciones las cuales son:
+1) Aceptar los cambios entrantes
+2) Aceptar los cambios actuales 
+3) Aceptar los cambios actuales y entrantes
+
+Aquí deberemos tomar la opción que más nos convenga dependiendo nuestro caso.
