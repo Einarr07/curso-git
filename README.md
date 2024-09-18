@@ -1,9 +1,24 @@
 # Curso de git por soy dalto
 
-Git es un sistema de control de versiones donde encontraremos 3 areas de desarrollo las cuales son:
-1) El área de trabajo.
-2) El área de staging area.
-3) El repositorio.
+## Indice
+1. [Git: Áreas de desarrollo](#git-áreas-de-desarrollo)
+2. [Configuración inicial](#configuración-inicial)
+3. [ADD y commits](#add-y-commits)
+4. [Git restore, checkout y más](#git-restore-checkout-y-más)
+5. [Git diff y historial de commits](#git-diff-y-historial-de-commits)
+6. [Modificar commits y deshacer commits](#modificar-commits-y-deshacer-commits)
+7. [Ramas (Branches)](#ramas-branches)
+8. [Fusionar ramas (merge)](#fusionar-ramas-merge)
+9. [Merge conflicts](#merge-conflicts)
+---
+## Git: Áreas de desarrollo
+Git es un sistema de control de versiones distribuido que utiliza tres áreas principales para gestionar los cambios en un proyecto. Estas áreas son:
+
+1) Área de trabajo (Working Directory): Es el directorio donde se encuentra tu proyecto. Aquí es donde haces cambios a los archivos y es donde Git te permite ver el estado actual de tu proyecto. Los archivos en esta área pueden estar modificados, pero aún no están listos para ser confirmados en el historial del repositorio.
+
+2) Área de preparación (Staging Area): También llamada index, es una zona intermedia donde los cambios que has marcado están listos para ser confirmados (commits). Los archivos que han sido agregados con el comando **git add** pasan a esta área, donde se guardan temporalmente hasta que se realice un commit.
+
+3) Repositorio (Repository): Esta es la base de datos local que contiene todos los commits o instantáneas del proyecto. Cuando haces un **git commit**, los cambios en el área de preparación se registran en el repositorio como parte del historial del proyecto.
 
 ## Configuración inicial
 Git tiene tres niveles de configuración que determinan el alcance de las configuraciones aplicadas:
@@ -230,7 +245,7 @@ pero si estamos dentro de la misma rama que queremos modificar utilizamos:
 git branch -m nombre-nuevo
 ```
 
-### Fucionar ramas (merge)
+### FuSionar ramas (merge)
 
 1) Para fucionar los cambios que realizamos en una rama con otra, debemos estar dentro de la rama a la cual queremos enviar los cambios, generalmente master o main.
 
