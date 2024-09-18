@@ -5,9 +5,7 @@ Git es un sistema de control de versiones donde encontraremos 3 areas de desarro
 2) El área de staging area.
 3) El repositorio.
 
-## Principiante
-
-### Configuración inicial
+## Configuración inicial
 Git tiene tres niveles de configuración que determinan el alcance de las configuraciones aplicadas:
 
 - **Alcance local:** Este es el repositorio en el que estamos trabajando, es decir, la carpeta del proyecto.
@@ -55,7 +53,7 @@ git config --global core.autocrlf true
 git config --global core.autocrlf input
 ```
 
-### ADD y commits
+## ADD y commits
 1) Para poder iniciar y trabajar dentro de un proyecto en git debemos utilizar el comando:
 ```
 git init
@@ -106,7 +104,7 @@ git commit
 git commit -m "comentario" -a
 ```
 
-### Git restore, checkout y más
+## Git restore, checkout y más
 1) Si eliminamos un archivo y lo queremos recuperar del área de preparación utilizamos:
 ```
 git restore nombre_del_archivo.txt
@@ -124,7 +122,7 @@ git reset --hard
 git mv nombre_del_archivo.txt nuevo_nombre.txt
 ```
 
-### Git diff y historial de commits
+## Git diff y historial de commits
 1) Para verificar los cambios que hicimos en comparación con los commits utilizamos:
 ```
 git show nombre_del_archivo.txt
@@ -157,7 +155,7 @@ git diff --name-only 4427b 9ccc3
 git diff --word-diff 4427b 9ccc3
 ```
 
-### Modificar commits y deshacer commits
+## Modificar commits y deshacer commits
 
 1) Comando para modificar el ultimo commit
 2) Modificar y agregar un nuevo archivo.
@@ -184,7 +182,7 @@ git reset --mixed d5r8e6d
 git reset --hard djf23d2j
 ```
 
-### Ramas (Branches)
+## Ramas (Branches)
 Al crear una rama realizamos una copia del proyecto para trabajar desde la misma y no afectar a la rama principal.
 NOTA: La rama principal siempre suele tener el nombre de master o main.
 
@@ -232,7 +230,7 @@ pero si estamos dentro de la misma rama que queremos modificar utilizamos:
 git branch -m nombre-nuevo
 ```
 
-#### Fucionar ramas (merge)
+### Fucionar ramas (merge)
 
 1) Para fucionar los cambios que realizamos en una rama con otra, debemos estar dentro de la rama a la cual queremos enviar los cambios, generalmente master o main.
 
@@ -242,14 +240,18 @@ git merge nombre-de-la-rama-donde-estan-los-cambios
 
 Consejo: Si fucionamos algo que no deviamos haber fusionado (la fallamos) utilizamos el comando reset --hard como se meciona en el apartado de **Modificar commits y deshacer commits**
 
-#### Merge conflicts
+### Merge conflicts
 Los merge conflicts o conflictos de fusión ocurren en Git cuando dos ramas tienen cambios que no pueden fusionarse automáticamente. Esto sucede cuando dos o más personas o ramas han modificado la misma parte del mismo archivo de forma diferente, y Git no sabe cuál de las versiones conservar.
 
+![Captura de pantalla 2024-09-18 130427](https://github.com/user-attachments/assets/37b19091-d497-44e7-8a7b-66fcb7e0910f)
 
-El bloque entre <<<<<<< HEAD y ======= corresponde a los cambios en tu rama actual.
-El bloque entre ======= y >>>>>>> rama-en-conflicto corresponde a los cambios de la rama que estás fusionando.
+
+- El bloque entre <<<<<<< HEAD y ======= corresponde a los cambios en tu rama actual.
+- El bloque entre ======= y >>>>>>> rama-en-conflicto corresponde a los cambios de la rama que estás fusionando.
 
 Para resolver este conflicto de fusión debemos utilizar un editor de texto y escoger el cambio que queremos conservar. En mi caso estoy utilizando VSC y tiene la opción de **Resolver en el editor de combinación**
+
+![Captura de pantalla 2024-09-18 131633](https://github.com/user-attachments/assets/47516d46-0545-49b8-bd27-2e11b5a4e6fd)
 
 
 Para resolver estos confictos tendremos 3 opciones las cuales son:
