@@ -10,6 +10,7 @@
 7. [Ramas (Branches)](#ramas-branches)
 8. [Fusionar ramas (merge)](#fusionar-ramas-merge)
 9. [Merge conflicts](#merge-conflicts)
+10. [Alias](#alias)
 ---
 ## Git: Áreas de desarrollo
 Git es un sistema de control de versiones distribuido que utiliza tres áreas principales para gestionar los cambios en un proyecto. Estas áreas son:
@@ -275,3 +276,13 @@ Para resolver estos confictos tendremos 3 opciones las cuales son:
 3) Aceptar los cambios actuales y entrantes
 
 Aquí deberemos tomar la opción que más nos convenga dependiendo nuestro caso.
+
+## Alias
+Para utilizar los alias utilizamos este comando donde el nombre del alias estara después de alias.nombre, ejemplo:
+```
+git config --global alias.log-time "log --oneline --graph --all --pretty=format:'%C(auto)%h%d %s %C(black)%C(bold)%cr'"
+```
+una vez creado el alias utilizamos el nombre que hayamos creado
+```
+git log-time
+```
