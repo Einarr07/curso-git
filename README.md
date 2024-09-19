@@ -13,6 +13,12 @@
 10. [Alias](#alias)
 11. [Recuperar un commit](#git-reflog)
 ---
+## GitHub
+12. [Clonar un repositorio](#git-clone)
+13. [Subir proyecto](#git-push)
+14. [Bajar cambios](#git-push)
+15. [Revisar los cambios bajados en una rama temporal](#git-fetch)
+---
 ## Git: Áreas de desarrollo
 Git es un sistema de control de versiones distribuido que utiliza tres áreas principales para gestionar los cambios en un proyecto. Estas áreas son:
 
@@ -296,4 +302,40 @@ git reflog
 y una ves tengo identificado cual es el commit que quiero restaurar utilizo este comando:
 ```
 git reset --hard dfe23st
+```
+---
+## Git clone
+Para clonar un repositorio debemos dirigirnos a la página de ese repositorio y debemos copiar la url:
+```
+git clone https://github.com/Einarr07/Invasores-espaciales-game.git
+```
+## Git push
+Si es la primera ves que vamos a subir nuestro proyecto a github utilizamos esta serie de comandos
+```
+git init
+```
+```
+git add .
+```
+```
+git commit -m "comentario"
+```
+```
+git branch -M main
+```
+```
+git remote add origin https://github.com/Einarr07/curso-git.git
+```
+```
+git push -u origin main 
+```
+## Git pull
+Para traernos los cambios que ya sabemos que estan en el servidor utilizamos.
+```
+git pull
+```
+## Git fetch
+Este comando nos sirve para verificar los cambios que estan en nuestro repositorio de github y los queremos bajar. Nos ayuda a tomar una mejor decisión en cuanto a los cambios en el proyecto para verificar si nos sirve o no
+```
+git fetch
 ```
