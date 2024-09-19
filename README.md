@@ -11,6 +11,7 @@
 8. [Fusionar ramas (merge)](#fusionar-ramas-merge)
 9. [Merge conflicts](#merge-conflicts)
 10. [Alias](#alias)
+11. [Recuperar un commit](#git-reflog)
 ---
 ## Git: Áreas de desarrollo
 Git es un sistema de control de versiones distribuido que utiliza tres áreas principales para gestionar los cambios en un proyecto. Estas áreas son:
@@ -285,4 +286,14 @@ git config --global alias.log-time "log --oneline --graph --all --pretty=format:
 una vez creado el alias utilizamos el nombre que hayamos creado
 ```
 git log-time
+```
+
+## Git reflog
+Para ver el historial de commits utilizamos:
+```
+git reflog
+```
+y una ves tengo identificado cual es el commit que quiero restaurar utilizo este comando:
+```
+git reset --hard dfe23st
 ```
