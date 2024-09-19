@@ -1,0 +1,14 @@
+# Para ignorar un archivo en especifico colocamos el nombre de dicho archivo
+NASA.txt
+
+# Para ignorar multiples archivos con la misma extención colocamos asterisco (*) y la extención
+*.py
+
+# Si queremos que exclusivamente no se ignore un archivo con dicha extension utilizamos el signo de exclamación(!)
+!agradecimiento.py
+
+# Ignorar todo lo que esta dentro de una carpeta
+nadie_se_puede_enterar/
+
+# Si quisieramos utilizar un .gitignore_global para que ignore todos los archivos que se encuentren en nuestros repositorios utilizamos el comando
+git config --global core.excludesfile "G:/.gitignore_global" (Ruta donde creamos nuestro archivo global)
