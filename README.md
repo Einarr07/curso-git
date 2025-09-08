@@ -75,6 +75,10 @@ git config --global core.autocrlf true
 ```
 git config --global core.autocrlf input
 ```
+Esta configuración es para colocar el nombre de la rama como 'main' por defecto
+```
+git config --global init.defaultBranch main
+```
 
 ## ADD y commits
 1) Para poder iniciar y trabajar dentro de un proyecto en git debemos utilizar el comando:
