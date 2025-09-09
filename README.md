@@ -208,6 +208,8 @@ git reset --mixed d5r8e6d
 ```
 git reset --hard djf23d2j
 ```
+Imagen de referencia: 
+![Imagen de las áreas de git](images/vertions_areas.png)
 
 ## Ramas (Branches)
 Al crear una rama realizamos una copia del proyecto para trabajar desde la misma y no afectar a la rama principal.
